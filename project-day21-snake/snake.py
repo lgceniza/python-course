@@ -1,4 +1,4 @@
-from turtle import *
+from turtle import Turtle
 
 STARTING_POSITIONS = [(0,0), (-20,0), (-40,0)]
 MOVE_DISTANCE = 20
@@ -6,6 +6,7 @@ RIGHT = 0
 UP = 90
 LEFT = 180
 DOWN = 270
+
 
 class Snake:
   def __init__(self):

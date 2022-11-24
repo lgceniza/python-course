@@ -7,6 +7,7 @@ from scoreboard import Scoreboard
 STARTING_POSITION_A = (350, 0)
 STARTING_POSITION_B = (-350, 0)
 
+
 screen = Screen()
 screen.setup(width=800, height=600)
 screen.bgcolor('black')

@@ -1,4 +1,4 @@
-from turtle import *
+from turtle import Turtle
 
 FONT = ('Arial', 16, 'normal')
 
