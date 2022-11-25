@@ -1,6 +1,10 @@
 # created by virtualenv automatically
 bin/
 lib/
+etc/
+share/
 .Python
 **/.DS_Store
 **/__pycache__/
+*.py[cod]
+*$py.class
