@@ -23,8 +23,14 @@ screen.onkey(snake.goLeft, 'Left')
 screen.onkey(snake.goRight, 'Right')
 screen.onkey(bye, 'Escape')
 
-game_loop = True
+def end_game():
+  # game_loop = False
+  # scoreboard.game_over()
+  scoreboard.reset()
+  snake.reset()
+  food.spawn()
 
+game_loop = True
 while game_loop:
   time.sleep(0.1)
   screen.update()
@@ -36,11 +42,9 @@ while game_loop:
     scoreboard.increase_score()
 
   if snake.head.xcor() > 280 or snake.head.xcor() < -280 or snake.head.ycor() > 280 or snake.head.ycor() < -280:
-    game_loop = False
-    scoreboard.game_over()
+    end_game()
   
   if snake.head.distance(snake.tail) < 15:
-    game_loop = False
-    scoreboard.game_over()
+    end_game()
 
 screen.exitonclick()

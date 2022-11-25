@@ -27,6 +27,10 @@ class Snake:
     self.head = self.segments[0]    
     self.tail = self.segments[-1]
   
+  def reset(self):
+    self.segments = [_.reset() for _ in self.segments]
+    self.__init__()
+
   def eat(self):
     old_x = self.segments[-1].xcor()
     old_y = self.segments[-1].ycor()
