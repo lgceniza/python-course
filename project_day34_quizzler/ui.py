@@ -3,7 +3,9 @@ from tkinter import messagebox
 from quiz_brain import QuizBrain
 
 THEME_COLOR = "#375362"
-WHITE = "white"
+WHITE = "#f7f1f0"
+GREEN = "#37eb34"
+RED = "#de4c3c"
 TITLE = "Quizzler"
 
 class App(tk.Tk):
@@ -15,7 +17,7 @@ class App(tk.Tk):
     self.resizable(False, False)
     
     self.canvas = tk.Canvas()
-    self.canvas.config(width=300, height=250, bg='white')
+    self.canvas.config(width=300, height=250, bg=WHITE)
     self.question_text = self.canvas.create_text(
       150,
       125,
@@ -49,11 +51,18 @@ class App(tk.Tk):
     try:
       question = self.quiz.getQuestion()
       self.canvas.itemconfig(self.question_text, text=question.text)
+      self.canvas.after_cancel('reset_color')
     except AttributeError:
       pass
 
   def checkAnswer(self, answer):
-    self.quiz.checkAnswer(answer)
+    if self.quiz.checkAnswer(answer):
+      color = GREEN
+    else:
+      color = RED
+    self.canvas.config(bg=color)
+    self.reset_color = self.canvas.after(1000, self.canvas.config, {'bg': WHITE})
+
     self.displayScore()
     if self.quiz.notDone():
       self.displayQuestion()

@@ -23,3 +23,5 @@ class QuizBrain:
   def checkAnswer(self, user_answer):
     if user_answer == self.current_question.answer:
       self.score += 1
+      return True
+    return False
