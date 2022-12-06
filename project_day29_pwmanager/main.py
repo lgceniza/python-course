@@ -4,7 +4,7 @@ from tkinter import messagebox
 
 from sys import path
 path.append('/Users/euniceceniza/Documents/training/python-course')
-from project_day5_pwgenerator import generate
+from misc_projects.project_day5_pwgenerator import generate
 
 LETTERS = 8
 NUMBERS = 4
