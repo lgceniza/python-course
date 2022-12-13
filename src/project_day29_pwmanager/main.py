@@ -3,7 +3,7 @@ from tkinter import *
 from tkinter import messagebox
 
 from sys import path
-path.append('/Users/euniceceniza/Documents/training/python-course')
+path.append('/Users/euniceceniza/Documents/training/python-course/src')
 from misc_projects.project_day5_pwgenerator import generate
 
 LETTERS = 8
