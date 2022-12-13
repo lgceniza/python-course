@@ -3,6 +3,7 @@ bin/
 lib/
 etc/
 share/
+var/
 .Python
 **/.DS_Store
 **/__pycache__/
